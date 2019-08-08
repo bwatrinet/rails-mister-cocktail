@@ -1,0 +1,14 @@
+<hr>
+<div class="container">
+
+  <h1>Add ingredient</h1>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient %>
+    <%= f.input :quantity %>
+    <%= f.input :unit %>
+    <%= f.submit "Add ingredient", class: "btn btn-success" %>
+  <% end %>
+
+</div>
+</hr>
