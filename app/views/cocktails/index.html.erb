@@ -1,46 +1,37 @@
-<hr>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-2">
-      </div>
-      <div class="col-sm-2">
-        <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="150px">
-      </div>
-      <div class="col-sm-5">
-        <br>
-        <div class="row justify-content-left">
-          <br>
-          <h1><strong>Mister Cocktail</strong></h1>
-          <br>
-          <h5><strong>Sans alcool, la fête est plus folle !</strong></h5>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <br>
-        <br>
-        <div class="row justify-content-center">
-          <button class="btn btn-success"> <%=link_to '➕ Add new cocktail', new_cocktail_path%> </button>
-         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <% @cocktails.each do |cocktail| %>
-          <div class="justify-content-center">
-            <img src="https://source.unsplash.com/user/arobj/320x150" style="border-radius:5px">
-            <br>
-            <h4><%= cocktail.name %></h4>
-             <button class="btn btn-info"> <%=link_to 'See receipe', cocktail_path(cocktail)%> </button>
-            <br>
-            <br>
-          </div>
-          <br>
-      <% end %>
-    </div>
+<nav class="navbar-lewagon navbar-light">
+  <form class="form-inline">
+    <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="100px">
+    <button class="btn btn-light"> <%=link_to '➕ Add new cocktail', new_cocktail_path%> </button>
     <br>
-  </div>
+    <h2><strong>Sans alcool, la fête est plus folle !</strong></h2>
+  </form>
+</nav>
 
-</hr>
+<div class="container">
+  <div class="row justify-content-center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Lph-H0JOjGY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>
+</div>
+
+<div class="container" style="margin:20px;">
+  <div class="row justify-content-center">
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <% @cocktails.each do |cocktail| %>
+        <div class="justify-content-center">
+          <img src="https://source.unsplash.com/user/arobj/320x150" style="border-radius:5px">
+          <br>
+          <h4><%= cocktail.name %></h4>
+           <button class="btn btn-info"> <%=link_to 'See receipe', cocktail_path(cocktail)%> </button>
+          <br>
+          <br>
+        </div>
+        <br>
+    <% end %>
+  </div>
+  <br>
+</div>
