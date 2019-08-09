@@ -35,6 +35,6 @@ before_action :find_cocktail, only: [ :show, :edit, :update ]
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :description)
+    params.require(:cocktail).permit(:name, :description, :photo)
   end
 end

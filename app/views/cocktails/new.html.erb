@@ -1,6 +1,8 @@
 <nav class="navbar-lewagon navbar-light">
   <form class="form-inline">
-    <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="100px">
+    <%=link_to cocktails_path do %>
+      <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="100px">
+    <%end %>
     <h2><strong>Sans alcool, la fête est plus folle !</strong></h2>
   </form>
 </nav>
@@ -11,6 +13,8 @@
   <%= simple_form_for [@cocktail] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "btn btn-success" %>
   <button class="btn btn-dark" style="margin:10px"> <%=link_to 'Discard changes ', cocktails_path%> </button>
 <% end %>

@@ -1,7 +1,9 @@
 <nav class="navbar navbar-lewagon navbar-light justify-content-between">
-  <form>
+ <form>
+    <%=link_to cocktails_path do %>
     <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="75px">
-  </form>
+    <%end %>
+  </form >
   <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Your cocktail" aria-label="Search">
     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
@@ -18,17 +20,17 @@
   <div class="row justify-content-center">
     <div class="col-sm-4">
       <div data-aos="flip-left">
-        <img class="zoom" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width ="375px" style="border-radius:5px" style="box-shadow: 10px">
+        <img id="zoom" class="shadow p-1 bg-info rounded" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="350px">
       </div>
     </div>
     <div class="col-sm-4">
       <div data-aos="flip-left">
-        <img class="zoom" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="375px" style="border-radius:5px" style="box-shadow: 10px">
+        <img id="zoom" class="shadow p-1 bg-info rounded" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="350px">
       </div>
     </div>
     <div class="col-sm-4">
       <div data-aos="flip-left">
-        <img class="zoom" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="375px" style="border-radius:5px" style="box-shadow: 10px">
+        <img id="zoom" class="shadow p-1 bg-info rounded" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="350px">
       </div>
     </div>
   </div>
@@ -41,10 +43,17 @@
       <br>
       </div>
       <div class="col-sm-4">
-        <h5> <strong>Ingredients : </strong>
+        <h5> <strong>Ingredients : </strong></h5>
         <% @cocktail.doses.each do |dose| %>
-        <%= dose.ingredient.name %> <%=dose.quantity%><%=dose.unit%>
-        <% end %></h5>
+          <ul>
+            <li>
+              <%= dose.ingredient.name %> <%=dose.quantity%><%=dose.unit%>
+              <%=link_to dose_path(dose.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </li>
+          </ul>
+        <% end %>
       <br>
       </div>
     </div>
@@ -58,3 +67,5 @@
   <br>
   <br>
 </div>
+
+<!-- cl_image_tag("mpswxccgpncrax4iddoi", width: 350, height: 230, crop: :fill) -->

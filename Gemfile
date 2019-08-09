@@ -20,8 +20,14 @@ gem 'webpacker'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
+#  gem for typewriter effect on text
 gem "typedjs-rails", "~> 2.0.9"
+#  dotenv: we don't want to share those secret keys on Github, we can use the dotenv gem for security.
 gem 'dotenv-rails', groups: [:development, :test]
+#  Host photos in the cloud.
+gem 'cloudinary', '~> 1.9.1'
+#  Carrierwave : it's a gem to upload files associated to Models.
+gem 'carrierwave', '~> 1.2'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
