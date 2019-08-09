@@ -18,35 +18,38 @@
   <div class="row justify-content-center">
     <div class="col-sm-4">
       <div data-aos="flip-left">
-        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width ="375px" style="border-radius:5px" style="box-shadow: 10px">
+        <img class="zoom" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width ="375px" style="border-radius:5px" style="box-shadow: 10px">
       </div>
     </div>
     <div class="col-sm-4">
       <div data-aos="flip-left">
-        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="375px" style="border-radius:5px" style="box-shadow: 10px">
+        <img class="zoom" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="375px" style="border-radius:5px" style="box-shadow: 10px">
       </div>
     </div>
     <div class="col-sm-4">
       <div data-aos="flip-left">
-        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="375px" style="border-radius:5px" style="box-shadow: 10px">
+        <img class="zoom" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="375px" style="border-radius:5px" style="box-shadow: 10px">
       </div>
     </div>
   </div>
   <br>
 
-  <div class="row justify-content-center" >
-    <div class="col-sm-8">
-      <h5> <strong>Description :</strong> <%= @cocktail.description %></h5>
-    <br>
-    </div>
-    <div class="col-sm-4">
-      <h5> <strong>Ingredients : </strong>
-      <% @cocktail.doses.each do |dose| %>
-      <%= dose.ingredient.name %> <%= dose.quantity %> <%= dose.unit %>
-      <% end %></h5>
-    <br>
+  <div class="container">
+    <div class="row justify-content-center" >
+      <div class="col-sm-8">
+        <h5> <strong>Description :</strong> <%= @cocktail.description %></h5>
+      <br>
+      </div>
+      <div class="col-sm-4">
+        <h5> <strong>Ingredients : </strong>
+        <% @cocktail.doses.each do |dose| %>
+        <%= dose.ingredient.name %> <%=dose.quantity%><%=dose.unit%>
+        <% end %></h5>
+      <br>
+      </div>
     </div>
   </div>
+
   <div class="row justify-content-center">
     <button class="btn btn-warning" style="margin:10px"> <%=link_to 'Edit cocktail', edit_cocktail_path(@cocktail)%> </button>
     <button class="btn btn-info" style="margin:10px"> <%=link_to 'Add ingredient', new_cocktail_dose_path(@cocktail)%> </button>

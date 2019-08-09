@@ -1,11 +1,16 @@
-  html, body {
+html, body {
   background: linear-gradient(360deg, #5b8ddc 0%, #8993c3 16%, #a89aaa 33%, #c0a191 50%, #d4a876 66%, #e6b058 83%, #f6b833 100%);
   color: #0D2948;
-  height: 100%;
-  margin: 0;
+  min-height: 100%;
+  font-family: $body-font;
+}
+
+h1 {
+  font-family: $headers-font;
 }
 
 h2 {
+  font-family: $headers-font;
   color: white;
 }
 
@@ -17,4 +22,9 @@ h2 {
 .margin-lg {
   margin: 20px;
   border-radius: 4px;
+}
+
+#zoom:hover {
+  transition: transform 1s;
+  transform: scale(1.2);
 }

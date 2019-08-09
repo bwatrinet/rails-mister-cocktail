@@ -8,8 +8,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "aos/src/sass/aos";
-@import "site";
+
 
 // Your CSS partials
+@import "site";
 @import "components/index";
 @import "pages/index";
+@import "pages/home";
+
