@@ -7,16 +7,7 @@
 
 <hr>
 <div class="container">
-
-  <h1>Add ingredient</h1>
-
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.association :ingredient %>
-    <%= f.input :quantity %>
-    <%= f.input :unit %>
-    <%= f.submit "Add ingredient", class: "btn btn-success" %>
-    <button class="btn btn-dark" style="margin:10px"> <%=link_to 'Discard changes ', cocktails_path%> </button>
-  <% end %>
-
+  <h1><strong>Edit Cocktail</strong></h1>
+  <%= render 'form', cocktail: @cocktail %>
 </div>
 </hr>

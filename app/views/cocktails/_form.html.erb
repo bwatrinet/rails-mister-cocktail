@@ -1,0 +1,6 @@
+  <%= simple_form_for [@cocktail] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.submit class: "btn btn-success" %>
+    <button class="btn btn-dark" style="margin:10px"> <%=link_to 'Discard changes ', cocktail_path(@cocktail)%> </button>
+  <% end %>

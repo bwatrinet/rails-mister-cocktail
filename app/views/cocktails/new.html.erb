@@ -1,13 +1,19 @@
+<nav class="navbar-lewagon navbar-light">
+  <form class="form-inline">
+    <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="100px">
+    <h2><strong>Sans alcool, la fête est plus folle !</strong></h2>
+  </form>
+</nav>
+
 <hr>
 <div class="container">
-
-  <h1>New cocktail</h1>
-
+  <h1><strong>New Cocktail</strong></h1>
   <%= simple_form_for [@cocktail] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.submit "Add cocktail", class: "btn btn-success" %>
-  <% end %>
-
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.submit class: "btn btn-success" %>
+  <button class="btn btn-dark" style="margin:10px"> <%=link_to 'Discard changes ', cocktail_path(@cocktail)%> </button>
+<% end %>
 </div>
 </hr>
+

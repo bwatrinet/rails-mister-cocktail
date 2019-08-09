@@ -1,31 +1,26 @@
-<nav class="navbar-lewagon navbar-light">
-  <form class="form-inline">
-    <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="100px">
-    <button class="btn btn-light"> <%=link_to '➕ Add new cocktail', new_cocktail_path%> </button>
-    <br>
-    <h2><strong>Sans alcool, la fête est plus folle !</strong></h2>
+<nav class="navbar navbar-lewagon navbar-light justify-content-between">
+
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Your cocktail" aria-label="Search">
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
   </form>
+  <form>
+    <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="75px">
+  </form>
+  <form class="form-inline my-2 my-lg-0">
+   <button class="btn btn-info"> <%=link_to '➕ Add new cocktail', new_cocktail_path%> </button>
+  </form>
+
 </nav>
-
-<div class="container">
-  <div class="row justify-content-center">
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/Lph-H0JOjGY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   </div>
-</div>
-
-<div class="container" style="margin:20px;">
-  <div class="row justify-content-center">
-
-  </div>
-</div>
-
+<br>
 <div class="container">
   <div class="row justify-content-center">
     <% @cocktails.each do |cocktail| %>
-        <div class="justify-content-center">
-          <img src="https://source.unsplash.com/user/arobj/320x150" style="border-radius:5px">
-          <br>
-          <h4><%= cocktail.name %></h4>
+        <div class="col-sm-4">
+          <div data-aos="flip-down">
+            <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="350px" height="180px" style="border-radius:4px" class="shadow p-1 bg-info rounded " class="margin-sm">
+          </div>
+          <h3 class="margin-sm"> <strong><%= cocktail.name %></strong></h3>
            <button class="btn btn-info"> <%=link_to 'See receipe', cocktail_path(cocktail)%> </button>
           <br>
           <br>
