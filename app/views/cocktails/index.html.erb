@@ -1,21 +1,19 @@
-<nav class="navbar navbar-lewagon navbar-light justify-content-between">
-
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Your cocktail" aria-label="Search">
-    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-  </form>
-  <form>
-    <%=link_to cocktails_path do %>
-      <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="75px">
-    <%end %>
-  </form >
-  <form class="form-inline my-2 my-lg-0">
-    <button class="btn btn-info"> <%=link_to '➕ Add new cocktail', new_cocktail_path%> </button>
-    <div style="margin: 5px"> </div>
-    <img class="avatar-bordered" src="https://avatars1.githubusercontent.com/u/50453385?s=460&v=4" width="100px">
-  </form>
-
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #0D2848;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarToggler" style="justify-content:space-between">
+      <%=link_to cocktails_path do %>
+        <h4 id="nav-text"> 🍹 Mister Cocktail  </h4>
+      <%end %>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-info"> <%=link_to '➕ Add a cocktail', new_cocktail_path%> </button>
+        <div style="margin: 5px"> </div>
+        <img class="avatar-bordered" src="https://avatars1.githubusercontent.com/u/50453385?s=460&v=4" width="100px">
+      </form>
+  </div>
 </nav>
+
 <br>
 <div class="container" style="text-align: center">
   <h1><strong>Pick a cocktail</strong> </h1>
@@ -24,15 +22,16 @@
 <div class="container">
   <div class="row justify-content-center">
     <% @cocktails.each do |cocktail| %>
-        <div class="col-sm-4">
+      <div class="col-sm-4">
+        <%=link_to cocktail_path(cocktail) do%>
           <div data-aos="flip-down">
-            <img id="zoom" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="375px" style="border-radius:4px" class="shadow p-1 bg-info rounded" class="margin-sm">
+            <img id="zoom" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80" width="300px" style="border-radius:4px" class="img-fluid shadow p-1 bg-info rounded" class="margin-sm">
           </div>
-          <h2 class="margin-sm"> <strong><%= cocktail.name %></strong></h2>
-           <button class="btn btn-info"> <%=link_to 'See receipe', cocktail_path(cocktail)%> </button>
+          <h3 class="margin-sm"> <strong><%= cocktail.name %></strong></h3>
           <br>
           <br>
         </div>
+      <% end %>
         <br>
     <% end %>
   </div>
