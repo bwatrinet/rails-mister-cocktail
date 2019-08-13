@@ -17,6 +17,7 @@
 
 import 'bootstrap';
 import Typed from 'typed.js';
+
 import AOS from 'aos';
 AOS.init({
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
