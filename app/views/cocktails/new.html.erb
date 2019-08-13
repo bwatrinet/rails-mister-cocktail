@@ -1,11 +1,16 @@
 <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #0D2848;">
-    <div class="navbar-collapse" id="navbarToggler" style="justify-content:space-between">
-      <%=link_to cocktails_path do %>
-        <h4 id="nav-text"> 🍹 Mister Cocktail  </h4>
-      <%end %>
-      <%=link_to cocktails_path do %>
-      <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="65px">
-      <%end %>
+  <%=link_to cocktails_path do %>
+      <img src="https://images.vexels.com/media/users/3/144120/isolated/preview/4eff3df3a5d6f917f98ba7917ee40011-neon-cocktails-sign-by-vexels.png" width="50px">
+    <%end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" id="navigation" href="#">Cocktail of the month <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" id="navigation" href="#">Find a local store</a>
+      <a class="nav-item nav-link" id="navigation" href="#">Sign in</a>
+    </div>
   </div>
 </nav>
 

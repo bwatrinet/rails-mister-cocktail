@@ -1,24 +1,33 @@
-<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #0D2848;">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarToggler" style="justify-content:space-between">
-      <%=link_to cocktails_path do %>
-        <h4 id="nav-text"> 🍹 Mister Cocktail  </h4>
-      <%end %>
-      <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-info"> <%=link_to '➕ Add a cocktail', new_cocktail_path%> </button>
-        <div style="margin: 5px"> </div>
-        <img class="avatar-bordered" src="https://avatars1.githubusercontent.com/u/50453385?s=460&v=4" width="100px">
-      </form>
+<nav class="navbar navbar-expand-sm navbar-light justify-content-between" style="background-color: #0D2848;">
+  <form class="form-inline my-2 my-lg-0">
+    <img class="avatar-bordered" src="https://avatars1.githubusercontent.com/u/50453385?s=460&v=4" width="100px">
+  </form>
+  <form class="form-inline my-2 my-lg-0">
+    <button class="btn btn-info"> <%=link_to '➕ Add a cocktail', new_cocktail_path%> </button>
+  </form>
   </div>
 </nav>
 
 <br>
-<div class="container" style="text-align: center">
-  <h1><strong>Pick a cocktail</strong> </h1>
+<div class="container" style="text-align: left">
+  <h1> Wanna try our <strong><span class="type" style="background-color: #0D2848; color:#F8C559"> </span ></strong></h1>
+  <script >
+    var typed = new Typed(".type", {
+    strings: [
+    "first",
+    "Whisky sour ? 🥃",
+    "Tequila Sunrise ? 🍹",
+    "Pornstar Martini 🍸 ? "
+    ],
+    typeSpeed: 50,
+    backSpeed: 50,
+    loop: true
+});
+  </script>
 </div>
 <br>
+
+
 <div class="container">
   <div class="row justify-content-center">
     <% @cocktails.each do |cocktail| %>

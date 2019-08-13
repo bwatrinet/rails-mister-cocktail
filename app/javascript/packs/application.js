@@ -16,6 +16,7 @@
 // const imagePath = (name) => images(name, true)
 
 import 'bootstrap';
+import Typed from 'typed.js';
 import AOS from 'aos';
 AOS.init({
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
@@ -28,4 +29,4 @@ AOS.init({
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
 
-import Typed from 'typed.js';
+
