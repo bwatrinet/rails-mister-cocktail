@@ -27,7 +27,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 #  Host photos in the cloud.
 gem 'cloudinary', '~> 1.9.1'
 #  Carrierwave : it's a gem to upload files associated to Models.
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
